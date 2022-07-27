@@ -1,12 +1,9 @@
 # amazon-iid
 To verify the instance identity document
 
-<<<<<<< HEAD
-=======
 ??? Agents attested by the aws_iid attestor will be issued a SPIFFE ID like 
 ``` spiffe://example.org/spire/agent/aws_iid/ACCOUNT_ID/REGION/INSTANCE_ID.```
 
->>>>>>> updated README
 ### Documentos de identidade da instância
 | Dados	| Descrição |
 | ----- | --------- |

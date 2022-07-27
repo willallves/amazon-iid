@@ -36,6 +36,13 @@ var (
 )
 
 func VerifyRSACert() {
+
+	var err error
+
+	if RSACert, err = x509.ParseCertificate(RSACertPEM.Bytes); err != nil {
+		panic(err)
+	}
+
 	// This method requires you to fetch the /document and /signature
 
 	fmt.Println("Fetching Identity Instance Document")
@@ -57,7 +64,7 @@ func VerifyRSACert() {
 	}
 
 	fmt.Printf("Checking RSA Certificate SHA256WithRSA\n")
-	err = RSACert.CheckSignature(x509.SHA256WithRSA, bod2, DecodedRSASig)
+	err = RSACert.CheckSignature(x509.SHA256WithRSA, document, DecodedRSASig)
 	if err != nil {
 		fmt.Println("Unable to verify: " + err.Error())
 	} else {
